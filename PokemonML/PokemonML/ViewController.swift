@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate {
+    let imageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +24,18 @@ class ViewController: UIViewController {
     }
     
     fileprivate func setupImage() {
-        let image = UIImageView()
-        image.backgroundColor = .red
-        image.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(image)
+        imageView.backgroundColor = .red
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(imageView)
         NSLayoutConstraint.activate([
-            image.heightAnchor.constraint(equalToConstant: 100),
-            image.widthAnchor.constraint(equalToConstant: 100),
-            image.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            image.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            imageView.heightAnchor.constraint(equalToConstant: 300),
+            imageView.widthAnchor.constraint(equalToConstant: 300),
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
+    
+    
 }
 
 extension ViewController: UIImagePickerControllerDelegate {
@@ -41,11 +43,18 @@ extension ViewController: UIImagePickerControllerDelegate {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.allowsEditing = false
+        picker.delegate = self
         present(picker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        //
+        picker.dismiss(animated: true)
+
+        guard let image = info[.originalImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        imageView.image = image
     }
 }
 
