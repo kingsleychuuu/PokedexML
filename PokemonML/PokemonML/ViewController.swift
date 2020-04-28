@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate {
     let imageView = UIImageView()
+    var classificationBox = UIView()
+    var classificationLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,33 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         ])
     }
     
+    private func addClassificationBox() {
+        classificationBox = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 128))
+        classificationBox.backgroundColor = .gray
+        self.view.addSubview(classificationBox)
+        classificationBox.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            classificationBox.leftAnchor.constraint(equalTo: self.imageView.rightAnchor, constant: 0),
+            classificationBox.bottomAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 0),
+            classificationBox.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16),
+            classificationBox.heightAnchor.constraint(equalToConstant: 128)])
+        addClassificationLabel()
+    }
+        
+    private func addClassificationLabel() {
+        classificationLabel = UILabel()
+        classificationLabel.text = "Tap to take a picture of a Pokemon!"
+        classificationBox.addSubview(classificationLabel)
+        classificationLabel.translatesAutoresizingMaskIntoConstraints = false
+        classificationLabel.textAlignment = .center
+        NSLayoutConstraint.activate([
+            classificationLabel.leftAnchor.constraint(equalTo: classificationBox.leftAnchor),
+            classificationLabel.topAnchor.constraint(equalTo: classificationBox.topAnchor),
+            classificationLabel.bottomAnchor.constraint(equalTo: classificationBox.bottomAnchor),
+            classificationLabel.rightAnchor.constraint(equalTo: classificationBox.rightAnchor),
+            ])
+    }
     
 }
 
