@@ -69,7 +69,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         self.imageView.image = image
     }
     
-    private func addCamera() {
+    private func addCamera() { 
         // Instantiate cameraController
         let cameraController = CameraViewController()
         self.addChild(cameraController)
