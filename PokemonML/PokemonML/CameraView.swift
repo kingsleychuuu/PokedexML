@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 import AVFoundation
 
 class CameraView: UIView {
@@ -28,6 +27,5 @@ class CameraView: UIView {
         // Drawing code
     }
     */
-
 }
 
