@@ -65,6 +65,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             ])
     }
     
+    func updateImage(image: UIImage) {
+        self.imageView.image = image
+    }
+    
+    private func addCamera() {
+        // Instantiate cameraController
+        let cameraController = CameraViewController()
+        self.addChild(cameraController)
+        cameraController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(cameraController.view)
+        cameraController.didMove(toParent: self)
+    }
+    
 }
 
 extension ViewController: UIImagePickerControllerDelegate {

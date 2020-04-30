@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class CameraViewController: UIViewController {
+class CameraViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var captureSession = AVCaptureSession()
     var previewView = CameraView()
@@ -57,6 +57,30 @@ class CameraViewController: UIViewController {
             previewView.frame = self.view.frame
             self.view.addSubview(previewView)
             setupTapGesture()
+    }
+    
+    private func setupTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(capturePhoto))
+        tap.delegate = self
+        previewView.addGestureRecognizer(tap)
+    }
+    
+    @objc func capturePhoto() {
+        if let output = captureSession.outputs.first as? AVCapturePhotoOutput {
+            let settings = AVCapturePhotoSettings()
+            settings.flashMode = .off
+            output.capturePhoto(with: settings, delegate: self)
         }
+    }
+}
 
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let data = photo.fileDataRepresentation() {
+            let capturedImage = UIImage(data: data)!
+            if let parent = self.parent as? ViewController {
+                parent.updateImage(image: capturedImage)
+            }
+        }
+    }
 }
