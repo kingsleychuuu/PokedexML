@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841EE283245BBF3B0009BFF7 /* ClassificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EE282245BBF3B0009BFF7 /* ClassificationController.swift */; };
+		841EE287245BC2640009BFF7 /* PokemonModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 841EE286245BC2640009BFF7 /* PokemonModel.mlmodel */; };
 		84813414245930CF00D8D90A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84813413245930CF00D8D90A /* CameraViewController.swift */; };
 		84813416245930E700D8D90A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84813415245930E700D8D90A /* CameraView.swift */; };
 		84E91F8424561FEA0035B49E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E91F8324561FEA0035B49E /* AppDelegate.swift */; };
@@ -16,7 +18,6 @@
 		84E91F9024561FEC0035B49E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E91F8E24561FEC0035B49E /* LaunchScreen.storyboard */; };
 		84E91F9B24561FEC0035B49E /* PokemonMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E91F9A24561FEC0035B49E /* PokemonMLTests.swift */; };
 		84E91FA624561FEC0035B49E /* PokemonMLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E91FA524561FEC0035B49E /* PokemonMLUITests.swift */; };
-		84E91FB424562E920035B49E /* PokemonModel 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 84E91FB324562E920035B49E /* PokemonModel 1.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841EE282245BBF3B0009BFF7 /* ClassificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationController.swift; sourceTree = "<group>"; };
+		841EE286245BC2640009BFF7 /* PokemonModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = PokemonModel.mlmodel; path = ../../../PokemonModel.mlproj/Models/PokemonModel.mlmodel; sourceTree = "<group>"; };
 		84813413245930CF00D8D90A /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		84813415245930E700D8D90A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		84E91F8024561FEA0035B49E /* PokemonML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonML.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,7 +55,6 @@
 		84E91FA124561FEC0035B49E /* PokemonMLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonMLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E91FA524561FEC0035B49E /* PokemonMLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonMLUITests.swift; sourceTree = "<group>"; };
 		84E91FA724561FEC0035B49E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84E91FB324562E920035B49E /* PokemonModel 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "PokemonModel 1.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +105,11 @@
 		84E91F8224561FEA0035B49E /* PokemonML */ = {
 			isa = PBXGroup;
 			children = (
-				84E91FB324562E920035B49E /* PokemonModel 1.mlmodel */,
+				841EE286245BC2640009BFF7 /* PokemonModel.mlmodel */,
 				84E91F8324561FEA0035B49E /* AppDelegate.swift */,
 				84E91F8524561FEA0035B49E /* SceneDelegate.swift */,
 				84E91F8724561FEA0035B49E /* ViewController.swift */,
+				841EE282245BBF3B0009BFF7 /* ClassificationController.swift */,
 				84813413245930CF00D8D90A /* CameraViewController.swift */,
 				84813415245930E700D8D90A /* CameraView.swift */,
 				84E91F8C24561FEC0035B49E /* Assets.xcassets */,
@@ -265,8 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E91F8824561FEA0035B49E /* ViewController.swift in Sources */,
+				841EE283245BBF3B0009BFF7 /* ClassificationController.swift in Sources */,
 				84813414245930CF00D8D90A /* CameraViewController.swift in Sources */,
-				84E91FB424562E920035B49E /* PokemonModel 1.mlmodel in Sources */,
+				841EE287245BC2640009BFF7 /* PokemonModel.mlmodel in Sources */,
 				84813416245930E700D8D90A /* CameraView.swift in Sources */,
 				84E91F8424561FEA0035B49E /* AppDelegate.swift in Sources */,
 				84E91F8624561FEA0035B49E /* SceneDelegate.swift in Sources */,
